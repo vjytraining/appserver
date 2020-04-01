@@ -1,0 +1,23 @@
+---
+#- become: true
+- name: copy pom.xml to tmp
+  copy:
+    src: pom.xml
+    dest: /tmp
+
+- name: Copying appsvcstart.sh script to server
+  copy:
+    src: appsvcstart.sh 
+    dest: /appsvcstart.sh
+    mode: 0777
+
+- name: Execute the Script
+  command: sh /appsvcstart.sh
+
+  #- name: create appsvr directory
+  #file:
+  #    path: /appserver
+  #    state: directory
+  #    mode: 0777
+
+  

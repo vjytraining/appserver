@@ -1,0 +1,4 @@
+---
+# tasks file for lamp
+- include_tasks: appserver.yml
+
